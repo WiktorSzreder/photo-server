@@ -22,3 +22,7 @@ def list_files():
     files = os.listdir(UPLOAD_FOLDER)
     links = [f'<a href="/uploads/{f}">{f}</a>' for f in files]
     return '<br>'.join(links)
+
+if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
